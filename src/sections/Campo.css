@@ -1,0 +1,198 @@
+.campo {
+  background: var(--black);
+  overflow: hidden;
+}
+
+.campo-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+/* Content */
+.campo-title {
+  font-size: clamp(2.8rem, 5.5vw, 5rem);
+  line-height: 0.88;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
+.campo-green {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--green-bright);
+}
+
+.campo-location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.75rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--green-bright);
+}
+
+.campo-desc {
+  font-size: 0.97rem;
+  color: var(--white-dim);
+  line-height: 1.8;
+  margin-bottom: 1.1rem;
+}
+
+.campo-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+.campo-feature {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+  padding: 1.1rem;
+  background: var(--black-mid);
+  border-left: 2px solid rgba(45,122,79,0.3);
+  transition: border-color 0.3s, background 0.3s;
+}
+.campo-feature:hover {
+  border-color: var(--green-bright);
+  background: var(--black-light);
+}
+.campo-feature-icon {
+  color: var(--green-bright);
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+.campo-feature-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--white);
+  margin-bottom: 0.3rem;
+}
+.campo-feature-desc {
+  font-size: 0.78rem;
+  color: rgba(245,245,240,0.5);
+  line-height: 1.5;
+}
+
+/* Visual */
+.campo-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  position: relative;
+}
+.campo-img-main {
+  position: relative;
+  overflow: hidden;
+}
+.campo-img-main img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  object-position: center 40%;
+  filter: brightness(0.88) contrast(1.05);
+  transition: transform 0.6s ease;
+}
+.campo-img-main:hover img { transform: scale(1.03); }
+
+.campo-img-badge {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: rgba(10,10,10,0.85);
+  border: 1px solid rgba(45,122,79,0.35);
+  padding: 0.6rem 1rem;
+  backdrop-filter: blur(8px);
+}
+.badge-line {
+  display: block;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.4rem;
+  color: var(--green-bright);
+  line-height: 1;
+  letter-spacing: 0.08em;
+}
+.badge-line-sub {
+  display: block;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(245,245,240,0.45);
+}
+
+.campo-img-secondary {
+  overflow: hidden;
+}
+.campo-img-secondary img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  object-position: center 55%;
+  filter: brightness(0.82) contrast(1.05);
+  transition: transform 0.6s ease;
+}
+.campo-img-secondary:hover img { transform: scale(1.03); }
+
+/* Panorama strip */
+.campo-panorama-strip {
+  position: relative;
+  height: 320px;
+  overflow: hidden;
+}
+.campo-panorama-strip img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  filter: brightness(0.4) contrast(1.1);
+}
+.panorama-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    90deg,
+    rgba(10,10,10,0.5) 0%,
+    rgba(10,10,10,0.1) 50%,
+    rgba(10,10,10,0.5) 100%
+  );
+}
+.panorama-text {
+  text-align: center;
+}
+.panorama-text span { display: none; }
+.panorama-text h3 {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  color: white;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+}
+
+@media (max-width: 1024px) {
+  .campo-inner {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    padding: 4rem 1.5rem;
+  }
+  .campo-img-main img { height: 300px; }
+  .campo-img-secondary img { height: 200px; }
+  .campo-panorama-strip { height: 240px; }
+}
+@media (max-width: 600px) {
+  .campo-features { grid-template-columns: 1fr; }
+  .panorama-text h3 { font-size: 1.4rem; }
+}
