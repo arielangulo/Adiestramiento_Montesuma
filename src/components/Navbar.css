@@ -355,4 +355,13 @@
 @media (max-width: 900px) {
   .hamburger { display: flex; }
   .navbar-links { display: none; }
+  .navbar { padding: 1rem 1.25rem; }
+  .navbar.scrolled { padding: 0.75rem 1.25rem; }
+  .logo-circle { width: 60px; height: 60px; }
+}
+@media (max-width: 480px) {
+  .navbar { padding: 0.75rem 1rem; }
+  .navbar.scrolled { padding: 0.6rem 1rem; }
+  .logo-circle { width: 52px; height: 52px; }
+  .navbar-brand strong { font-size: 1rem; }
 }

@@ -1,22 +1,25 @@
 import { Link } from 'react-router-dom'
-import { FaWhatsapp, FaFacebook, FaArrowLeft } from 'react-icons/fa'
+import { FaWhatsapp, FaFacebook } from 'react-icons/fa'
 import './ServicePageLayout.css'
 
 export default function ServicePageLayout({ service }) {
   return (
     <div className="sp-wrapper">
 
-      {/* BACK ARROW — fixed, right side of navbar to avoid logo clash */}
-      <Link to="/" className="sp-back-fixed" aria-label="Volver al inicio">
-        <FaArrowLeft size={14} />
-      </Link>
-
       {/* HERO */}
       <header className="sp-hero">
         {service.heroVideo ? (
-          <video className="sp-hero-media" src={service.heroVideo} autoPlay muted loop playsInline />
+          <video
+            className="sp-hero-media"
+            src={service.heroVideo}
+            autoPlay muted loop playsInline
+          />
         ) : (
-          <img className="sp-hero-media" src={service.heroImg} alt={service.titleLines.join(' ')} />
+          <img
+            className="sp-hero-media"
+            src={service.heroImg}
+            alt={service.titleLines.join(' ')}
+          />
         )}
         <div className="sp-hero-overlay" />
         <div className="sp-hero-content">
@@ -35,8 +38,11 @@ export default function ServicePageLayout({ service }) {
             >
               <FaWhatsapp /> Consultar ahora
             </a>
-            <a href="#mas-info" className="btn-outline"
-              onClick={(e)=>{e.preventDefault();document.getElementById('mas-info')?.scrollIntoView({behavior:'smooth'})}}>
+            <a
+              href="#mas-info"
+              className="btn-outline"
+              onClick={(e) => { e.preventDefault(); document.getElementById('mas-info')?.scrollIntoView({ behavior: 'smooth' }) }}
+            >
               Ver más info
             </a>
           </div>
@@ -97,7 +103,7 @@ export default function ServicePageLayout({ service }) {
             <div className="sp-process-steps">
               {service.process.steps.map((s, i) => (
                 <div className="sp-step" key={i}>
-                  <div className="sp-step-num">{String(i+1).padStart(2,'0')}</div>
+                  <div className="sp-step-num">{String(i + 1).padStart(2, '0')}</div>
                   <div className="sp-step-body">
                     <h4 className="sp-step-title">{s.title}</h4>
                     <p className="sp-step-desc">{s.desc}</p>
@@ -166,6 +172,7 @@ export default function ServicePageLayout({ service }) {
           <Link to="/obediencia">Obediencia</Link>
         </div>
       </div>
+
     </div>
   )
 }

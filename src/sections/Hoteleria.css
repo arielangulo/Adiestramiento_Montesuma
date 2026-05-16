@@ -1,32 +1,43 @@
 .hoteleria{background:var(--black-rich)}
 .hoteleria-inner{max-width:1280px;margin:0 auto;padding:6rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+
+/* Visual — fixed widths removed, use 100% */
 .hoteleria-visual{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:auto auto;gap:.75rem;position:relative}
 .visual-main{grid-row:1/3}
-.visual-main img{width:375px;height:520px;object-fit:cover;object-position:center 20%;filter:brightness(.9) contrast(1.05)}
+.visual-main img{width:100%;height:520px;object-fit:cover;object-position:center 20%;filter:brightness(.9) contrast(1.05)}
 .visual-side{display:flex;flex-direction:column;gap:.75rem}
-.visual-side img{width:250px;height:250px;object-fit:cover;filter:brightness(.85)}
+.visual-side img{width:100%;height:250px;object-fit:cover;filter:brightness(.85)}
 .visual-badge{position:absolute;bottom:-1.5rem;left:-1.5rem;background:var(--green);padding:1.5rem 1.75rem;display:flex;flex-direction:column;align-items:center;gap:.25rem;z-index:2;box-shadow:0 20px 60px rgba(0,0,0,.5)}
 .badge-num{font-family:'Bebas Neue',sans-serif;font-size:3rem;line-height:1;color:white}
 .badge-label{font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.85);text-align:center;line-height:1.3}
-.hoteleria-title{font-size:clamp(3rem,6vw,5.5rem);line-height:.88;margin-bottom:2rem;color:var(--white)}
+
+.hoteleria-title{font-size:clamp(2.5rem,5.5vw,5.5rem);line-height:.88;margin-bottom:2rem;color:var(--white)}
 .title-green-stroke{color:transparent;-webkit-text-stroke:2px var(--green-bright)}
-.hoteleria-desc{font-size:1rem;color:var(--white-dim);line-height:1.75;margin-bottom:1rem}
-.hoteleria-desc-2{font-family:'Barlow Condensed',sans-serif;font-size:1.2rem;font-style:italic;color:var(--green-bright);margin-bottom:2.5rem;font-weight:500}
-.hoteleria-features{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2.5rem}
+.hoteleria-desc{font-size:clamp(.9rem,1.3vw,1rem);color:var(--white-dim);line-height:1.75;margin-bottom:1rem}
+.hoteleria-desc-2{font-family:'Barlow Condensed',sans-serif;font-size:1.15rem;font-style:italic;color:var(--green-bright);margin-bottom:2.5rem;font-weight:500}
+.hoteleria-features{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-bottom:2rem}
 .feature-item{display:flex;gap:1rem;align-items:flex-start}
 .feature-icon{color:var(--green-bright);flex-shrink:0;margin-top:.1rem}
 .feature-title{font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;color:var(--white);margin-bottom:.25rem}
 .feature-desc{font-size:.82rem;color:var(--white-dim);line-height:1.5}
 .hoteleria-ctas{display:flex;gap:1rem;flex-wrap:wrap}
-@media(max-width:1024px){.hoteleria-inner{grid-template-columns:1fr;gap:3rem;padding:4rem 1.25rem 5rem}.visual-main img{height:380px}.visual-badge{bottom:auto;top:-1.5rem;left:auto;right:-.5rem}}
-@media(max-width:600px){.hoteleria-features{grid-template-columns:1fr}}
 
-.hoteleria-note {
-  font-size: 0.78rem;
-  color: rgba(245,245,240,0.35);
-  font-family: 'Barlow Condensed', sans-serif;
-  letter-spacing: 0.05em;
-  margin-bottom: 1.75rem;
-  padding-top: 0.25rem;
-  border-top: 1px solid rgba(255,255,255,0.06);
+/* Responsive */
+@media(max-width:1024px){
+  .hoteleria-inner{grid-template-columns:1fr;gap:3.5rem;padding:4rem 1.5rem 5rem}
+  .visual-main img{height:380px}
+  .visual-badge{bottom:auto;top:-1.5rem;left:auto;right:-.5rem}
+}
+@media(max-width:768px){
+  .hoteleria-inner{padding:4rem 1.25rem}
+  .hoteleria-visual{grid-template-columns:1fr}
+  .visual-main{grid-row:auto}
+  .visual-main img{height:300px}
+  .visual-side{display:none}
+  .visual-badge{top:auto;bottom:-1rem;right:1rem;left:auto}
+}
+@media(max-width:600px){
+  .hoteleria-features{grid-template-columns:1fr}
+  .hoteleria-ctas{flex-direction:column}
+  .hoteleria-ctas .btn-primary,.hoteleria-ctas .btn-outline{text-align:center;justify-content:center}
 }
