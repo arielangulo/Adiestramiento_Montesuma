@@ -38,7 +38,6 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="hero-badge"><img src="/images/logo-white.png" alt="Logo Montesuma" /></div>
     </section>
   )
 }
