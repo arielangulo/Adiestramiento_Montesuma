@@ -4,13 +4,13 @@ const equipo = [
   {
     nombre: 'John Meneses',
     cargo: 'Director & Adiestrador Principal',
-    initials: 'JM',
+    foto: '/images/john.jpeg',
     bio: 'Más de 30 años formando perros de trabajo bajo estándares IGP/IPO internacionales. Especialista en rastreo, protección y obediencia de alto rendimiento. Ha entrenado perros para protección personal, guardia perimetral y competición deportiva a nivel nacional.',
   },
   {
-    nombre: 'Steven',
+    nombre: 'Steven Perdomo',
     cargo: 'Adiestrador & Entrenador de Campo',
-    initials: 'ST',
+    foto: '/images/steven.jpeg',
     bio: 'Especialista en trabajo de campo y protección deportiva. Maneja las sesiones de mordida, los ejercicios de campo abierto y la supervisión diaria de los perros en hotelería. Amplia experiencia en lectura canina y trabajo con razas de alto drive.',
   },
 ]
@@ -30,11 +30,13 @@ export default function Equipo() {
         <div className="equipo-grid">
           {equipo.map((p, idx) => (
             <div className="equipo-card" key={idx}>
-              <div className="equipo-avatar">
-                <div className="avatar-circle">
-                  <span className="avatar-initials">{p.initials}</span>
-                </div>
-                <div className="avatar-ring" />
+              <div className="equipo-foto-wrap">
+                <img
+                  src={p.foto}
+                  alt={p.nombre}
+                  className="equipo-foto"
+                />
+                <div className="equipo-foto-overlay" />
               </div>
               <div className="equipo-card-body">
                 <div className="equipo-card-top">

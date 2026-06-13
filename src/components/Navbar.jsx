@@ -43,13 +43,24 @@ export default function Navbar() {
     }
   }
 
+  const handleLogo = (e) => {
+    e.preventDefault()
+    setMenuOpen(false)
+    if (location.pathname !== '/') {
+      navigate('/')
+      setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 50)
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }
+
   const handleContacto = (e) => { e.preventDefault(); setMenuOpen(false); scrollTo('contacto') }
 
   return (
     <>
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="navbar-inner">
-          <Link to="/" className="navbar-logo">
+          <a href="/" className="navbar-logo" onClick={handleLogo}>
             <div className="logo-circle">
               <img src="/images/logo-white.png" alt="Adiestramiento Montesuma" />
             </div>
@@ -57,11 +68,9 @@ export default function Navbar() {
               <strong>MONTESUMA</strong>
               <em>Costa Rica</em>
             </span>
-          </Link>
+          </a>
 
           <ul className="navbar-links">
-            <li><Link to="/">Inicio</Link></li>
-
             <li className="has-drop" ref={dropRef}>
               <button
                 className={`nav-drop-trigger ${dropOpen ? 'active' : ''}`}
@@ -102,14 +111,15 @@ export default function Navbar() {
       <div className={`mobile-overlay ${menuOpen ? 'open' : ''}`} onClick={() => setMenuOpen(false)} />
       <div className={`mobile-drawer ${menuOpen ? 'open' : ''}`}>
         <div className="mobile-logo">
-          <img src="/images/logo-white.png" alt="Montesuma" />
-          <div>
-            <strong>MONTESUMA</strong>
-            <em>Costa Rica</em>
-          </div>
+          <a href="/" onClick={handleLogo} style={{display:'flex',alignItems:'center',gap:'0.75rem',textDecoration:'none'}}>
+            <img src="/images/logo-white.png" alt="Montesuma" />
+            <div>
+              <strong>MONTESUMA</strong>
+              <em>Costa Rica</em>
+            </div>
+          </a>
         </div>
         <nav className="mobile-nav">
-          <Link to="/" onClick={() => setMenuOpen(false)}>Inicio</Link>
           <div className="mobile-section-label">Servicios de Entrenamiento</div>
           {servicios.map(s => (
             <Link key={s.href} to={s.href} className="mobile-service-link" onClick={() => setMenuOpen(false)}>
