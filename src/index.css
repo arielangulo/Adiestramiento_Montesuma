@@ -1,3 +1,13 @@
+#root {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+#root.app-ready {
+  opacity: 1;
+}
+
+
 @font-face {
   font-family: "Bebas Neue";
   src: url("/fonts/bebas-neue-v16-latin/bebas-neue-v16-latin-regular.woff2") format("woff2");
