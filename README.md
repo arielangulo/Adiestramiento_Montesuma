@@ -1,16 +1,112 @@
-# React + Vite
+# Adiestramiento Montesuma
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Official website for **Adiestramiento Montesuma**, a Costa Rican company specializing in high-performance dog training with over 30 years of experience in tracking, protection, and obedience under international IGP standards.
 
-Currently, two official plugins are available:
+🌐 **Official Website:** https://adiestramientomontesuma.com
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Overview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Adiestramiento Montesuma is a custom-designed corporate website built to strengthen the company's digital presence while reflecting the discipline, professionalism, and excellence of its training programs.
 
-## Expanding the ESLint configuration
+The project combines a modern user experience, responsive layouts, immersive media, and reusable React components to create a fast and engaging website that showcases the company's services, facilities, and expertise.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Tech Stack
+
+- React 18
+- Vite
+- React Router v6
+- React Icons
+- CSS3 (Custom Styling)
+- Vercel
+
+---
+
+## Key Features
+
+- Modern responsive interface
+- Full-screen hero with Ken Burns animation
+- Animated desktop navigation and mobile drawer
+- Dedicated service pages for:
+  - Tracking
+  - Protection
+  - Obedience
+- Reusable page layout architecture
+- Video hero backgrounds
+- Facility gallery and panoramic training field section
+- Embedded Google Maps
+- WhatsApp integration with service-specific messages
+- Facebook integration
+- Smooth scrolling navigation
+- Performance-focused SPA architecture
+
+---
+
+## Project Structure
+
+```text
+src/
+├── components/
+│   ├── Navbar
+│   └── ServicePageLayout
+│
+├── pages/
+│   ├── Home
+│   ├── Tracking
+│   ├── Protection
+│   └── Obedience
+│
+├── sections/
+│   ├── Hero
+│   ├── Services
+│   ├── Boarding
+│   ├── Team
+│   ├── Training Field
+│   └── Contact
+│
+└── index.css
+```
+
+---
+
+## Design
+
+The visual identity follows a premium dark aesthetic inspired by the brand, combining strong typography, immersive imagery, and subtle animations to deliver a professional experience across all devices.
+
+### Color Palette
+
+| Token | Value |
+|--------|-------|
+| Background | `#0A0A0A` |
+| Primary | `#2D7A4F` |
+| Accent | `#3A9E65` |
+
+### Typography
+
+- **Bebas Neue** — Display headings
+- **Barlow Condensed** — Section headings
+- **Barlow** — Body text
+
+---
+
+## Technical Highlights
+
+- Component-based architecture
+- Reusable layouts
+- Responsive-first development
+- Custom CSS animations
+- Video and image optimization
+- SPA navigation with React Router
+- Clean and maintainable codebase
+- Production-ready deployment
+
+---
+
+## Author
+
+**Ariel Angulo Méndez**
+
+Frontend Developer
